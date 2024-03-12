@@ -1,8 +1,10 @@
-const { Router } = require("express");
-const { test } = require("../controller/userController");
+import { Router } from "express";
+import { test, verifyUsername } from "../controller/userController.js";
 
 const userRoute = Router();
 
 userRoute.get("/", test);
 
-module.exports = userRoute;
+userRoute.get('/verify-username', verifyUsername);
+
+export default userRoute;
